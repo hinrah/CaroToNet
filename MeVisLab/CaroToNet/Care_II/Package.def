@@ -1,0 +1,10 @@
+
+Package {
+  packageGroup = "CaroToNet"
+  packageName  = "Care_II"
+  owner = "Hinrich Rahlfs"
+    
+  // This option determines if changed internal networks can simply be saved.
+  // The possible values are "allow", "warn", and "refuse"
+  allowSaveOfInternalNetworks = refuse
+}

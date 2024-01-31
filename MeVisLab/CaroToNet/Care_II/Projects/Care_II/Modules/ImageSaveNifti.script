@@ -1,0 +1,60 @@
+// mdl v1 utf8
+//----------------------------------------------------------------------------------
+//! Macro module ImageSaveNifti
+/*!
+// \file    ImageSaveNifti.script
+// \author  hinrich
+// \date    2023-06-08
+//
+// 
+*/
+//----------------------------------------------------------------------------------
+
+
+
+Interface {
+  Inputs {
+    Field inOriginalImage {
+      internalName = OriginalImage.input0
+    }
+  }
+  Outputs {}
+  Parameters {
+    Field inDestination {
+      type = String
+      value = ""
+    }
+  Field save {
+      type = Trigger
+    }
+  Field browse {
+      type = Trigger
+    }
+  }
+}
+
+
+Commands {
+  source = $(LOCAL)/ImageSaveNifti.py
+  FieldListener save {
+    command = save
+  }
+  FieldListener browse {
+    command = browse
+  }
+}
+
+Window {
+  Category {
+    Horizontal {
+      Field inDestination {
+        title = "Destination:"
+      }
+      Button {
+        title = "Browse..."
+        command = browse
+      }
+    }
+    Button save {}
+  }
+}

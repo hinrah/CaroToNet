@@ -1,0 +1,54 @@
+// mdl v1 utf8
+//----------------------------------------------------------------------------------
+//! Macro module CAREIIDataset
+/*!
+// \file    CAREIIDataset.script
+// \author  hinrich
+// \date    2023-08-08
+//
+// 
+*/
+//----------------------------------------------------------------------------------
+
+
+Interface {
+  Inputs {}
+  Outputs {
+    Field outImage { internalName = outImage.output0 }
+    Field outInnerContours { internalName = outInnerContours.outCSOList }
+    Field outOuterContours { internalName = outOuterContours.outCSOList }
+  }
+  Parameters {
+    Field inStudyDirectory { type = String }
+        
+    //
+    Field availableCases { type = String }
+    Field selectedCase { type = String }
+    Field datasetType { type = String editable = False }
+  }
+}
+
+
+Commands {
+  source      = $(LOCAL)/CAREIIDataset.py
+  initCommand = "*py: CAREIIDataset(ctx) *"
+    
+  FieldListener inStudyDirectory { command = self.study_directory_changed }
+  FieldListener selectedCase { command = self.selectCase }
+}
+
+Window Status {
+  Vertical {
+    Field inStudyDirectory {
+      title        = "Study Directory:"
+      browseButton = YES
+      browseMode   = directory
+      browseTitle  = "Open"
+    }
+        
+    ComboBox selectedCase {
+      comboField = availableCases
+      editable   = False
+    }
+  }
+}

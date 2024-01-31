@@ -1,0 +1,21 @@
+// mdl v1 utf8
+//----------------------------------------------------------------------------------
+//! CAREIIDataset module definition
+/*!
+// \file    CAREIIDataset.def
+// \author  hinrich
+// \date    2023-08-08
+*/
+//----------------------------------------------------------------------------------
+
+
+MacroModule CAREIIDataset {
+  genre              = ""
+  author             = "hinrich"
+  comment            = ""
+  keywords           = "Miccai carotid"
+  seeAlso            = ""
+  exampleNetwork = "$(LOCAL)/networks/CAREIIDatasetExample.mlab"
+   
+  externalDefinition = "$(LOCAL)/CAREIIDataset.script"
+}

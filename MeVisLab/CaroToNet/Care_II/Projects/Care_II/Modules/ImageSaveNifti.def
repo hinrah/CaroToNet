@@ -1,0 +1,21 @@
+// mdl v1 utf8
+//----------------------------------------------------------------------------------
+//! ImageSaveNifti module definition
+/*!
+// \file    ImageSaveNifti.def
+// \author  hinrich
+// \date    2023-06-08
+*/
+//----------------------------------------------------------------------------------
+
+
+MacroModule ImageSaveNifti {
+  genre              = ""
+  author             = "hinrich"
+  comment            = ""
+  keywords           = "Nifti export"
+  seeAlso            = ""
+  exampleNetwork = "$(LOCAL)/networks/ImageSaveNiftiExample.mlab"
+   
+  externalDefinition = "$(LOCAL)/ImageSaveNifti.script"
+}

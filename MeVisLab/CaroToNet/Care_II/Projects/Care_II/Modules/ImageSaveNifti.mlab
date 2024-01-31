@@ -1,0 +1,18 @@
+// MDL v1 utf8
+mevislabVersion = 3.7.2.12
+network  {
+  watchlist = ""
+}
+module Bypass {
+  internal  {
+    frame = "661 381 104 56"
+    moduleGroupName = ""
+    showNetworkPanel = true
+  }
+  fields  {
+    instanceName = OriginalImage
+    noBypass = FALSE
+  }
+}
+connections = ""
+networkModel = ""
