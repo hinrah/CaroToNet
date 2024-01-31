@@ -104,4 +104,4 @@ if __name__ == "__main__":
     evaluation_plotter = VesselSegmentationEvaluationPlotter(args.save_path)
     evaluation_plotter.create_plots(segmentation_results["all"])
 
-    save_results_to_xlsx(segmentation_results, os.path.join(args.save_path, "slice_results.xlsx"), args.num_slices)
+    save_results_to_xlsx(segmentation_results, os.path.join(args.save_path, "results.xlsx"), args.num_slices)

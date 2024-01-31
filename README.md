@@ -1,20 +1,20 @@
 # CaroToNet
 
 This repository contains: 
-1. The code that was used to train train CaroToNet.
-2. The trained CaroToNet that was trained with all cross-sections from the training set
+1. The code that was used to train CaroToNet.
+2. The trained model CaroToNet.pth. It was trained with all cross-sections from the training set.
 3. The code to run the inference on a dataset of 2D Nifti files
 4. The code to evaluate the results.
 5. A MeVisLab Network to create the challenge test set used in "Learning Carotid Vessel Wall Segmentation in Blackblood MRI using Sparsely Sampled Cross-Sections from 3D Data" 
 
-This repository does not contain the training data used in "Learning Carotid Vessel Wall Segmentation in Blackblood MRI using Sparsely Sampled Cross-Sections from 3D Data" as the subject did not consent that the data can be made publicly available.
+This repository does not contain the training data used in "Learning Carotid Vessel Wall Segmentation in Blackblood MRI using Sparsely Sampled Cross-Sections from 3D Data" as the subjects did not consent to publication of the data.
 
 ### Installing dependencies
 To install dependencies run ```pip install -r requirements.txt```
 
 # Reproducing the evaluation on the 2021 Carotid Artery Vessel Wall Segmentation Challenge[[2]](#2) test set
 
-### Load Challenge test set and preprocess label masks, images and distance map.
+### Load Challenge test set and preprocess label masks, images and distance maps.
 
 1. Get challenge test set
    1. Download from: https://vessel-wall-segmentation.grand-challenge.org/results/
@@ -28,11 +28,12 @@ To install dependencies run ```pip install -r requirements.txt```
    4. Click OK
 5. Open <path_to_this_repo>/MeVisLab/create_care_ii_dataset.mlab
 6. Open Care_II dataset
-   1. Double click on the CareIIDatset Module
+   1. Double-click on the CareIIDatset Module
    2. Click Open
    3. Open the complete test data folder named "testdata_withcontours_corrected" (https://vessel-wall-segmentation.grand-challenge.org/results/)
+   4. Validate The dataset was loaded by clicking on the outputs of the CareIIDatset Module
 7. Create preprocessed images
-   1. Double click on the run python script Module
+   1. Double-click on the run python script Module
    2. Change line 4 to your output path. Your output path is now referred to by your_output_path.
    3. Click Execute
    4. Wait until all 4189 contours are processed
@@ -43,6 +44,9 @@ To install dependencies run ```pip install -r requirements.txt```
 ### Run Evaluation
 ````python evaluate.py -p <your_output_path>/prediciton -s <your_output_path> -gt <your_output_path>/labels````
 
+### View Evaluation
+
+The results of the evaluation can be seen in <your_output_path>/results.xlsx
 
 
 
@@ -81,3 +85,9 @@ Isensee,F. **nnU-Net dataset format** https://github.com/MIC-DKFZ/nnUNet/blob/ma
 
 <a id="2">[2]</a> 
  “Carotid artery vessel wall segmentation challenge.” https://vessel-wall-segmentation.grand-challenge.org/. (Accessed: 2023-11-21).
+
+
+# License 
+The code in this repository is licensed under the GNU-GPL license.
+The neural network model CaroToNet.pth is licensed under the CC BY-NC-SA 4.0 License.
+(https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)
