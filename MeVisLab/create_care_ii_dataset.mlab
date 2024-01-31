@@ -1,0 +1,683 @@
+// MDL v1 utf8
+mevislabVersion = 3.7.2.12
+network  {
+  watchlist = ""
+}
+module CAREIIDataset {
+  internal  {
+    frame = "-115 1125 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "793 543 824 56"
+        sizeHint = "235 56"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CAREIIDataset
+    inStudyDirectory = C:/Users/hinrich/Documents/testdata_withcontours_corrected
+    availableCases = 0_P204_U,0_P21_U,0_P246_U,0_P252_U,0_P308_U,0_P315_U,0_P336_U,0_P338_U,0_P347_U,0_P388_U,0_P413_U,0_P448_U,0_P460_U,0_P487_U,0_P546_U,0_P57_U,0_P587_U,0_P607_U,0_P759_U,0_P786_U,0_P86_U,0_P883_U,0_P955_U,0_P959_U,0_P978_U
+    selectedCase = 0_P978_U
+  }
+}
+module PythonArithmetic {
+  internal  {
+    frame = "53 545 168 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "188 177 702 508"
+        sizeHint = "485 508"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = DistanceFromCenterline
+    calculateOutputSubImage = "import itertools
+ext_x, ext_y, ext_z, ext_c, ext_t, ext_u = in0.extent()
+for x in range(ext_x):
+  for y in range(ext_y):
+    out[0,0,0,0,y,x] = numpy.sqrt((ext_x/2-x)**2 + (ext_y/2-y)**2)*0.195312"
+    calculateInputSubImageBox = ""
+    calculateOutputImageProperties = "if inImage0 is not None:
+  extent = inImage0.imageExtent()
+  outImage.setPageExtent(extent[0],extent[1],extent[2],extent[3],extent[4],extent[5] )"
+    numberOfInputs = 1
+    doubleConstant0 = 0
+    doubleConstant1 = 0
+    doubleConstant2 = 0
+    doubleConstant3 = 0
+    doubleConstant4 = 0
+    doubleConstant5 = 0
+    doubleConstantName0 = ""
+    doubleConstantName1 = ""
+    doubleConstantName2 = ""
+    doubleConstantName3 = ""
+    doubleConstantName4 = ""
+    doubleConstantName5 = ""
+    intConstant0 = 0
+    intConstant1 = 0
+    intConstant2 = 0
+    intConstant3 = 0
+    intConstant4 = 0
+    intConstant5 = 0
+    intConstantName0 = ""
+    intConstantName1 = ""
+    intConstantName2 = ""
+    intConstantName3 = ""
+    intConstantName4 = ""
+    intConstantName5 = ""
+    setMinMaxValues = FALSE
+    minVoxelValue = 0
+    maxVoxelValue = 0
+    setDataType = TRUE
+    dataType = float
+    inputDataType0 = "output type"
+    inputDataType1 = "output type"
+    inputDataType2 = "output type"
+    inputDataType3 = "output type"
+    inputDataType4 = "output type"
+    inputHandling0 = AllowAny
+    inputHandling1 = AllowAny
+    inputHandling2 = AllowAny
+    inputHandling3 = AllowAny
+    inputHandling4 = AllowAny
+  }
+}
+module CSOFilter {
+  internal  {
+    frame = "29 837 88 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "1114 396 496 496"
+        sizeHint = "496 495"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CSOFilter
+    updateMode = AutoClear
+    autoApply = FALSE
+    inputGroupString = ""
+    inputCSOString = 162
+    whichInputStringToUse = UseInputStringCSO
+    groupFilterMode = FilterModeInclude
+    csoFilterMode = FilterModeInclude
+    separatorString = " "
+    groupInputEvaluationMode = EvaluationModeIds
+    csoInputEvaluationMode = EvaluationModeIds
+    shouldCompareCaseInsensitive = FALSE
+    autoAddAllSelectedCSO = FALSE
+    autoAddAllSelectedGroup = FALSE
+    autoAddAllShownCSO = FALSE
+    autoAddAllShownGroup = FALSE
+    autoAddAllVoxelizeCSO = FALSE
+    autoAddAllVoxelizeGroup = FALSE
+    autoAddAllEditableCSO = FALSE
+    autoAddAllEditableGroup = FALSE
+    actionSetPathPointColor = FALSE
+    actionSetPathPointAlpha = FALSE
+    actionSetPathPointBrighten = FALSE
+    actionSetPathPointStyle = FALSE
+    actionSetPathPointWidth = FALSE
+    actionSetVoxelWriteMode = FALSE
+    actionSetVoxelWriteValue = FALSE
+    actionSetShowState = FALSE
+    actionSetVoxelizeState = FALSE
+    actionSetEditableState = FALSE
+    actionSetTimePointIndex = FALSE
+    actionSetSelectedCSO = FALSE
+    actionSetSelectedGroup = FALSE
+    actionSetGroupSeedPointColor = FALSE
+    actionSetGroupSeedPointStyle = FALSE
+    actionSetGroupSeedPointSize = FALSE
+    actionSetGroupSeedPointAlpha = FALSE
+    targetPathPointColor = "1 1 1"
+    targetPathPointAlpha = 1
+    targetPathPointBrightenValue = 1
+    targetPathPointStyle = LineStyleSolid
+    targetPathPointWidth = 1
+    targetVoxelWriteMode = VoxelWriteModeModule
+    targetVoxelWriteValue = 1024
+    targetShowState = TRUE
+    targetVoxelizeState = TRUE
+    targetEditableState = TRUE
+    targetTimePointIndex = 0
+    targetSelectedCSO = TRUE
+    targetSelectedGroup = TRUE
+    targetGroupSeedPointColor = "1 1 1"
+    targetGroupSeedPointStyle = MarkerModeRect
+    targetGroupSeedPointSize = 2
+    targetGroupSeedPointAlpha = 1
+    listenToFinishingCSONotifications = TRUE
+    listenToFinishingGroupNotifications = TRUE
+    listenToSelectionCSOChangedNotifications = TRUE
+    listenToSelectionGroupChangedNotifications = TRUE
+    listenToMovedCSONotifications = FALSE
+    csoTabSelected = TRUE
+    groupTabSelected = FALSE
+  }
+}
+module MPR {
+  internal  {
+    frame = "-319 805 80 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "444 334 572 467"
+        sizeHint = "540 467"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MPR1
+    rotation = "1 0 0 1.5708"
+    translation = "0 0 0"
+    plane = "0 -3.67320510341607e-06 0.999999999993254 0"
+    enablePlaneEdit = FALSE
+    autoCenter = FALSE
+    fillValue = 0
+    outputSizeMode = AspectRatio
+    fieldOfView = 25
+    outputSize = 128
+    aspectRatio = 1
+    fieldOfViewX = 100
+    fieldOfViewY = 100
+    outputSizeX = 256
+    outputSizeY = 256
+    slabMode = SizeInSlices
+    slabSize = 1
+    pageSizeX = 128
+    pageSizeY = 128
+    useUpVector = TRUE
+    upVector = "1 1 0"
+    disableDirectVoxelCopy = FALSE
+    inputSliceNo = 0
+    interpolation = Trilinear
+    borderHandling = UseFillValue
+    memoryAccess = Global
+    enableSlabProjection = FALSE
+    depthSlabRenderMode = Maximum
+    timeSlabRenderMode = Maximum
+    timeSlabStart = 0
+    timeSlabSize = 1
+    enableCurrentSlice = FALSE
+    currentSlice = 0
+    currentSliceRounded = 0
+    numberOfSlices = 0
+    currentSliceMin = 0
+    currentSliceMax = 0
+    snapCurrentSliceToIntegerIfOrthogonal = TRUE
+    imageColor = "1 1 1"
+    borderColor = "1 1 1"
+    borderOn = TRUE
+    drawImageOn = TRUE
+    manipulatorOn = TRUE
+    clipPlaneOn = FALSE
+    flipClipPlane = FALSE
+    clipPlaneOffset = 0
+    axesOn = FALSE
+    alphaFactor = 1
+    zBuffer = TRUE
+    blendMode = BLEND_REPLACE
+  }
+}
+module CSOVoxelizeContours {
+  internal  {
+    frame = "-339 517 184 56"
+    moduleGroupName = ""
+    showNetworkPanel = true
+    windows  {
+      window _default {
+        geometry = "-905 324 440 488"
+        sizeHint = "440 488"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CSOVoxelizeContours
+    updateMode = AutoClear
+    autoApply = FALSE
+    foregroundValue = 1
+    backgroundValue = 0
+    useImageValues = FALSE
+    fillSurface = TRUE
+    copyInputImage = FALSE
+    listenInteractionNotifications = FALSE
+    listenInteractionFinished = TRUE
+    boundingBoxMargin = 0
+    useAlwaysForegroundValueOfModule = TRUE
+    voxelizeCSO = TRUE
+    removeOutsideVoxels = FALSE
+    useAntiAliasing = FALSE
+    useGlobalSubsample = TRUE
+    antiAliasSubSample = 1
+    antiAliasSubSampleX = 1
+    antiAliasSubSampleY = 4
+    antiAliasSubSampleZ = 4
+    removeBorderVoxelsByVolume = TRUE
+    removeBorderVoxelVolumeThreshold = 0.5
+    ignoreTimePoints = FALSE
+    drawToAllTimePoints = FALSE
+    createMarkerList = FALSE
+    markerGenerationMode = CSOMarkerGenerationModeFromVoxels
+    outputTypeMode = Automatic
+    createCSOVoxelSet = FALSE
+    voxelSetMode = VoxelSetModeAdd
+    generationMode = GenerationModeComplete
+    useFastModeForParallelCSOs = TRUE
+    numThreads = 1
+    timePointIndexForBoundingBox = -1
+    removeOutsideVoxelsMode = Volume
+  }
+}
+module CSOFilter {
+  internal  {
+    frame = "177 837 96 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-1207 333 496 495"
+        sizeHint = "496 495"
+        wasOpen = yes
+      }
+    }
+  }
+  fields  {
+    instanceName = CSOFilter1
+    updateMode = AutoClear
+    autoApply = FALSE
+    inputGroupString = ""
+    inputCSOString = 162
+    whichInputStringToUse = UseInputStringCSO
+    groupFilterMode = FilterModeInclude
+    csoFilterMode = FilterModeInclude
+    separatorString = " "
+    groupInputEvaluationMode = EvaluationModeIds
+    csoInputEvaluationMode = EvaluationModeIds
+    shouldCompareCaseInsensitive = FALSE
+    autoAddAllSelectedCSO = FALSE
+    autoAddAllSelectedGroup = FALSE
+    autoAddAllShownCSO = FALSE
+    autoAddAllShownGroup = FALSE
+    autoAddAllVoxelizeCSO = FALSE
+    autoAddAllVoxelizeGroup = FALSE
+    autoAddAllEditableCSO = FALSE
+    autoAddAllEditableGroup = FALSE
+    actionSetPathPointColor = FALSE
+    actionSetPathPointAlpha = FALSE
+    actionSetPathPointBrighten = FALSE
+    actionSetPathPointStyle = FALSE
+    actionSetPathPointWidth = FALSE
+    actionSetVoxelWriteMode = FALSE
+    actionSetVoxelWriteValue = FALSE
+    actionSetShowState = FALSE
+    actionSetVoxelizeState = FALSE
+    actionSetEditableState = FALSE
+    actionSetTimePointIndex = FALSE
+    actionSetSelectedCSO = FALSE
+    actionSetSelectedGroup = FALSE
+    actionSetGroupSeedPointColor = FALSE
+    actionSetGroupSeedPointStyle = FALSE
+    actionSetGroupSeedPointSize = FALSE
+    actionSetGroupSeedPointAlpha = FALSE
+    targetPathPointColor = "1 1 1"
+    targetPathPointAlpha = 1
+    targetPathPointBrightenValue = 1
+    targetPathPointStyle = LineStyleSolid
+    targetPathPointWidth = 1
+    targetVoxelWriteMode = VoxelWriteModeModule
+    targetVoxelWriteValue = 1024
+    targetShowState = TRUE
+    targetVoxelizeState = TRUE
+    targetEditableState = TRUE
+    targetTimePointIndex = 0
+    targetSelectedCSO = TRUE
+    targetSelectedGroup = TRUE
+    targetGroupSeedPointColor = "1 1 1"
+    targetGroupSeedPointStyle = MarkerModeRect
+    targetGroupSeedPointSize = 2
+    targetGroupSeedPointAlpha = 1
+    listenToFinishingCSONotifications = TRUE
+    listenToFinishingGroupNotifications = TRUE
+    listenToSelectionCSOChangedNotifications = TRUE
+    listenToSelectionGroupChangedNotifications = TRUE
+    listenToMovedCSONotifications = FALSE
+    csoTabSelected = TRUE
+    groupTabSelected = FALSE
+  }
+}
+module CSOVoxelizeContours {
+  internal  {
+    frame = "-543 517 192 56"
+    moduleGroupName = ""
+    showNetworkPanel = true
+    windows  {
+      window _default {
+        geometry = "-1069 292 440 488"
+        sizeHint = "440 488"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CSOVoxelizeContours1
+    updateMode = AutoClear
+    autoApply = FALSE
+    foregroundValue = 1
+    backgroundValue = 0
+    useImageValues = FALSE
+    fillSurface = TRUE
+    copyInputImage = FALSE
+    listenInteractionNotifications = FALSE
+    listenInteractionFinished = TRUE
+    boundingBoxMargin = 0
+    useAlwaysForegroundValueOfModule = TRUE
+    voxelizeCSO = TRUE
+    removeOutsideVoxels = FALSE
+    useAntiAliasing = FALSE
+    useGlobalSubsample = TRUE
+    antiAliasSubSample = 1
+    antiAliasSubSampleX = 1
+    antiAliasSubSampleY = 4
+    antiAliasSubSampleZ = 4
+    removeBorderVoxelsByVolume = TRUE
+    removeBorderVoxelVolumeThreshold = 0.5
+    ignoreTimePoints = FALSE
+    drawToAllTimePoints = FALSE
+    createMarkerList = FALSE
+    markerGenerationMode = CSOMarkerGenerationModeFromVoxels
+    outputTypeMode = Automatic
+    createCSOVoxelSet = FALSE
+    voxelSetMode = VoxelSetModeReplaceMin
+    generationMode = GenerationModeComplete
+    useFastModeForParallelCSOs = TRUE
+    numThreads = 1
+    timePointIndexForBoundingBox = -1
+    removeOutsideVoxelsMode = Volume
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "-439 373 96 72"
+    moduleGroupName = ""
+    showNetworkPanel = true
+    windows  {
+      window _default {
+        geometry = "-1247 325 577 511"
+        sizeHint = "577 511"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic3
+    expression = "a + b"
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = ErrorMessage
+    numberOfInputs = 2
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module ImageSaveNifti {
+  internal  {
+    frame = "-435 -75 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-1068 548 219 64"
+        sizeHint = "219 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImageSaveNifti1
+    inDestination = C:/Users/hinrich/Desktop/care_ii_dataset_paper_2/labels/0_P978_U_162.nii.gz
+  }
+}
+module MinMaxScan {
+  internal  {
+    frame = "-431 197 144 72"
+    moduleGroupName = ""
+    showNetworkPanel = true
+  }
+  fields  {
+    instanceName = MinMaxScan1
+    updateMode = AutoUpdate
+    typeSelect = "Proposed Data Type"
+    preferredIntType = PreferUnsigned
+  }
+}
+module ImageSaveNifti {
+  internal  {
+    frame = "-147 277 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-1068 548 219 64"
+        sizeHint = "219 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImageSaveNifti3
+    inDestination = C:/Users/hinrich/Desktop/care_ii_dataset_paper_2/images/0_P978_U_162_0000.nii.gz
+  }
+}
+module RunPythonScript {
+  internal  {
+    frame = "513 517 160 56"
+    moduleGroupName = ""
+    showNetworkPanel = true
+    windows  {
+      window _default {
+        geometry = "631 232 621 300"
+        sizeHint = "621 300"
+        wasOpen = yes
+      }
+    }
+  }
+  fields  {
+    instanceName = RunPythonScript1
+    in0 = ""
+    in1 = ""
+    in2 = ""
+    in3 = ""
+    in4 = ""
+    in5 = ""
+    in6 = ""
+    in7 = ""
+    in8 = ""
+    in9 = ""
+    inComment0 = in0
+    inComment1 = in1
+    inComment2 = in2
+    inComment3 = in3
+    inComment4 = in4
+    inComment5 = in5
+    inComment6 = in6
+    inComment7 = in7
+    inComment8 = in8
+    inComment9 = in9
+    autoApply0 = TRUE
+    autoApply1 = TRUE
+    autoApply2 = TRUE
+    autoApply3 = TRUE
+    autoApply4 = TRUE
+    autoApply5 = TRUE
+    autoApply6 = TRUE
+    autoApply7 = TRUE
+    autoApply8 = TRUE
+    autoApply9 = TRUE
+    out0 = ""
+    out1 = ""
+    out2 = ""
+    out3 = ""
+    out4 = ""
+    out5 = ""
+    out6 = ""
+    out7 = ""
+    out8 = ""
+    out9 = ""
+    outComment0 = out0
+    outComment1 = out1
+    outComment2 = out2
+    outComment3 = out3
+    outComment4 = out4
+    outComment5 = out5
+    outComment6 = out6
+    outComment7 = out7
+    outComment8 = out8
+    outComment9 = out9
+    initCode = "# For backward compatibility, set up CTX as alias for ctx
+CTX = ctx # ctx is the network's context, not RunPythonScript's"
+    wakeUpCode = ""
+    code = "*from pathlib import Path
+import os
+
+path_to_save_training_dataset = "<your_path>"
+Path(os.path.join(path_to_save_training_dataset, "images")).mkdir(parents=True, exist_ok=True)
+Path(os.path.join(path_to_save_training_dataset, "labels")).mkdir(parents=True, exist_ok=True)
+
+raise Exception()
+for case in ctx.field("CAREIIDataset.availableCases").value.split(","):
+  ctx.field("CAREIIDataset.selectedCase").value = case
+  ctx.field("CSOFilter.addAllExistingCSOs").touch()
+  for cso_id in ctx.field("CSOFilter.inputCSOString").value.split(" "):
+    ctx.field("CSOFilter.inputCSOString").value = cso_id
+    ctx.field("CSOFilter1.inputCSOString").value = cso_id
+    ctx.field("CSOFilter.apply").touch()
+    ctx.field("CSOFilter1.apply").touch()
+    ctx.field("CSOInfo.apply").touch()
+    ctx.field("CSOVoxelizeContours1.apply").touch()
+    ctx.field("CSOVoxelizeContours.apply").touch()
+    ctx.field("ImageSaveNifti3.inDestination").value = os.path.join(path_to_save_training_dataset, "images", f"{case}_{cso_id}_0000.nii.gz")
+    ctx.field("ImageSaveNifti4.inDestination").value = os.path.join(path_to_save_training_dataset, "images", f"{case}_{cso_id}_0001.nii.gz")
+    ctx.field("ImageSaveNifti1.inDestination").value = os.path.join(path_to_save_training_dataset, "labels", f"{case}_{cso_id}.nii.gz")
+    ctx.field("ImageSaveNifti3.save").touch()
+    ctx.field("ImageSaveNifti4.save").touch()
+    ctx.field("ImageSaveNifti1.save").touch()*"
+    finalizeCode = ""
+    showFields = FALSE
+    showInitCode = FALSE
+    showWakeUpCode = FALSE
+    showCode = TRUE
+    showFinalizeCode = FALSE
+    showConsole = FALSE
+  }
+}
+module ImageSaveNifti {
+  internal  {
+    frame = "45 277 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-1068 548 219 64"
+        sizeHint = "219 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImageSaveNifti4
+    inDestination = C:/Users/hinrich/Desktop/care_ii_dataset_paper_2/images/0_P978_U_162_0001.nii.gz
+  }
+}
+module CSOInfo {
+  internal  {
+    frame = "-127 789 80 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "-1150 227 666 845"
+        sizeHint = "368 845"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CSOInfo
+    updateMode = Off
+    autoApply = FALSE
+    csoShowMode = ByIndex
+    csoShowByIndexOrId = 0
+    csoShowPrivateValues = TRUE
+    groupShowMode = LastSelected
+    groupShowByIndexOrId = 0
+    shouldGenerateCSOStringOutput = FALSE
+    shouldGenerateCSOGroupStringOutput = FALSE
+    showCSOType = TRUE
+    showCSOSubType = TRUE
+    showCSOCreatorId = TRUE
+    showCSODescription = FALSE
+    showCSONumSeedPoints = TRUE
+    showCSONumPathPoints = TRUE
+    showCSOLength = FALSE
+    showCSOArea = FALSE
+    showCSOGrouping = TRUE
+    showCSOClosedState = TRUE
+    showCSOInPlane = TRUE
+    showCSOSelfIntersecting = FALSE
+    showGroupDescription = FALSE
+    showGroupNumCSO = TRUE
+    showGroupCSOIds = TRUE
+    listenToRepaintNotifications = FALSE
+    listenToFinishingNotifications = TRUE
+    listenToSelectionChangedNotifications = TRUE
+    listenToCSOCurrentlyUnderMouseNotifications = TRUE
+  }
+}
+connections  {
+  DistanceFromCenterline.input0 = MPR1.output0
+  CSOFilter.inputCSOList = CAREIIDataset.outInnerContours
+  MPR1.input0 = CAREIIDataset.outImage
+  MPR1.translation = CSOInfo.csoCenterPCA
+  CSOVoxelizeContours.input0 = MPR1.output0
+  CSOVoxelizeContours.inCSOList = CSOFilter.outputCSOList
+  CSOFilter1.inputCSOList = CAREIIDataset.outOuterContours
+  CSOVoxelizeContours1.input0 = MPR1.output0
+  CSOVoxelizeContours1.inCSOList = CSOFilter1.outputCSOList
+  Arithmetic3.input0 = CSOVoxelizeContours1.output0
+  Arithmetic3.input1 = CSOVoxelizeContours.output0
+  ImageSaveNifti1.inOriginalImage = MinMaxScan1.output0
+  MinMaxScan1.input0 = Arithmetic3.output0
+  ImageSaveNifti3.inOriginalImage = MPR1.output0
+  ImageSaveNifti4.inOriginalImage = DistanceFromCenterline.output0
+  CSOInfo.inCSOList = CSOFilter.outputCSOList
+  CSOInfo.apply = CSOFilter.apply
+}
+networkModel = ""
