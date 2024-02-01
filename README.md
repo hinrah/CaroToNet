@@ -84,7 +84,7 @@ python evaluate.py -p <path of folder with predictions> -s <path to save the eva
 Isensee,F. **nnU-Net dataset format** https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/dataset_format.md, (Accessed: 31.01.2024).
 
 <a id="2">[2]</a> 
- “Carotid artery vessel wall segmentation challenge.” https://vessel-wall-segmentation.grand-challenge.org/. (Accessed: 2023-11-21).
+ “Carotid artery vessel wall segmentation challenge.” https://vessel-wall-segmentation.grand-challenge.org/. (Accessed: 31.01.2024).
 
 
 # License 
