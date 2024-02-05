@@ -10,6 +10,8 @@ This repository contains:
 This repository does not contain the training data used in "Learning Carotid Vessel Wall Segmentation in Blackblood MRI using Sparsely Sampled Cross-Sections from 3D Data" as the subjects did not consent to publication of the data.
 
 ### Installing dependencies
+This project was developed with Python 3.10.
+
 To install dependencies run ```pip install -r requirements.txt```
 
 # Reproducing the evaluation on the 2021 Carotid Artery Vessel Wall Segmentation Challenge[[2]](#2) test set
@@ -26,6 +28,10 @@ To install dependencies run ```pip install -r requirements.txt```
    2. Click Add Existing User Packages... 
    3. Choose the folder <path_to_this_repo>/MeVisLab
    4. Click OK
+5. Install python dependency for MeVisLab
+   1. Search and add the PythonPip Module![PythonPip.png](ReadMeFigures%2FPythonPip.png)
+   2. Double-click on the module
+   3. Install nibabel ![Nibabel.png](ReadMeFigures%2FNibabel.png)
 5. Open <path_to_this_repo>/MeVisLab/create_care_ii_dataset.mlab
 6. Open Care_II dataset
    1. Double-click on the CareIIDatset Module
@@ -42,12 +48,11 @@ To install dependencies run ```pip install -r requirements.txt```
 ````python run_inference.py -i <your_output_path>/images -m <path_to_repo>/CaroToNet.pth -o <your_output_path>/prediciton````
 
 ### Run Evaluation
-````python evaluate.py -p <your_output_path>/prediciton -s <your_output_path> -gt <your_output_path>/labels````
+````python evaluation.py -p <your_output_path>/prediciton -s <your_output_path> -gt <your_output_path>/labels````
 
 ### View Evaluation
 
 The results of the evaluation can be seen in <your_output_path>/results.xlsx
-
 
 
 # Training

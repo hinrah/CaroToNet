@@ -30,11 +30,13 @@ Interface {
 
 
 Commands {
+  importPath = $(LOCAL)/dataset_hack
   source      = $(LOCAL)/CAREIIDataset.py
+  
   initCommand = "*py: CAREIIDataset(ctx) *"
     
-  FieldListener inStudyDirectory { command = self.study_directory_changed }
-  FieldListener selectedCase { command = self.selectCase }
+  FieldListener inStudyDirectory { command = self.s_d_c }
+  FieldListener selectedCase { command = self.s_c }
 }
 
 Window Status {
