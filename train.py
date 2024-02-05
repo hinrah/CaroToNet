@@ -67,11 +67,11 @@ class DataHandler:
 
     @property
     def validation_loader(self):
-        return self.validation_loader
+        return self._validation_loader
 
     @property
     def train_loader(self):
-        return self.train_loader
+        return self._train_loader
 
     @property
     def num_validation_samples(self):
