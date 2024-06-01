@@ -1,11 +1,10 @@
 DEVICE = "cuda"
 INIT_LR = 0.001
-NUM_EPOCHS = 600
+NUM_EPOCHS = 200
 BATCH_SIZE = 32
 INPUT_IMAGE_WIDTH = 128
 INPUT_IMAGE_HEIGHT = 128
-SLICES = ["1", "2", "3", "4", "5", "6", "7", "8", "all"]
+SLICES = ["all", "1", "2", "3", "4", "5", "6", "7", "8"]
 IMAGE_KEY = "image"
 LABEL_KEY = "label"
 KEYS = (IMAGE_KEY, LABEL_KEY)
-SPLIT_IDX = "split_idx"

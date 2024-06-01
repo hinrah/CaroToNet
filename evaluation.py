@@ -64,7 +64,7 @@ def evaluate_segmentations(prediction_folder, gt_folder, num_slices):
 
             segmentation_result = evaluator.evaluate(gt_data.get_fdata().squeeze(), prediction_data.get_fdata().squeeze(), get_pixel_size(gt_data))
 
-            segmentation_results[i].add(segmentation_result)
+            segmentation_results[i].add(prediction_path, segmentation_result)
 
     return segmentation_results
 
@@ -96,7 +96,7 @@ if __name__ == "__main__":
     parser.add_argument('-p', '--prediction_path')
     parser.add_argument('-s', '--save_path')
     parser.add_argument('-gt', '--ground_truth_path')
-    parser.add_argument('-n', '--num_slices', default=0, required=False, type=int)
+    parser.add_argument('-n', '--num_slices', type=int)
     args = parser.parse_args()
 
     segmentation_results = evaluate_segmentations(args.prediction_path, args.ground_truth_path, args.num_slices)
@@ -105,3 +105,25 @@ if __name__ == "__main__":
     evaluation_plotter.create_plots(segmentation_results["all"])
 
     save_results_to_xlsx(segmentation_results, os.path.join(args.save_path, "results.xlsx"), args.num_slices)
+
+    worst_paths = set(segmentation_results["all"].get_worst_ACD_paths(1) +
+                      segmentation_results["all"].get_worst_ACD_paths(2) +
+                      segmentation_results["all"].get_worst_HD_paths(1) +
+                      segmentation_results["all"].get_worst_HD_paths(2) +
+                      segmentation_results["all"].get_worst_dice_paths(1) +
+                      segmentation_results["all"].get_worst_dice_paths(2))
+
+    worst_eval_list = []
+    for path in worst_paths:
+        worst_eval_list.append({"slice": os.path.basename(path),
+                                "hd_wall": segmentation_results["all"].get_hd_by_path(path)[1],
+                                "hd_lumen": segmentation_results["all"].get_hd_by_path(path)[2],
+                                "acd_wall": segmentation_results["all"].get_acd_by_path(path)[1],
+                                "acd_lumen": segmentation_results["all"].get_acd_by_path(path)[2],
+                                "dc_wall": segmentation_results["all"].get_dice_by_path(path)[1],
+                                "dc_lumen": segmentation_results["all"].get_dice_by_path(path)[2],
+                                })
+    print(worst_eval_list)
+
+
+    print([elem["slice"] for elem in worst_eval_list])

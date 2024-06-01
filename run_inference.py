@@ -51,7 +51,8 @@ def run_inference(model_path, eval_images, prediction_folder):
     eval_data_set = Dataset(data=eval_files, transform=test_transform)
 
     for eval_data in eval_data_set:
-        prediction = unet(eval_data[IMAGE_KEY].reshape((1, 2, 128, 128)))
+
+        prediction = unet(eval_data[IMAGE_KEY].reshape((1, 1, 128, 128)))
         save_as_nifti(prediction, eval_data["image_meta_dict"], prediction_folder)
 
 
@@ -61,7 +62,7 @@ if __name__ == "__main__":
     parser.add_argument('-i', '--image_folder')
     parser.add_argument('-m', '--model_path')
     parser.add_argument('-o', '--output_folder')
-    parser.add_argument('-s', '--slice_modifier', default="*", required=False)
+    parser.add_argument('-s', '--slice_modifier', default="[1-8]", required=False)
     args = parser.parse_args()
 
     image_files = search_for_test_data(args.image_folder, args.slice_modifier)

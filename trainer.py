@@ -34,3 +34,15 @@ class Trainer:
                 prediction = self.network(x)
                 total_validation_loss += self.loss_function(prediction.to(torch.float32), y.to(torch.float32))
         return total_validation_loss
+
+    def mean_validation_metric(self, metric):
+        with torch.no_grad():
+            self.network.eval()
+            for batch_data in self.validation_loader:
+                x, y = batch_data[IMAGE_KEY], batch_data[LABEL_KEY]
+                prediction = self.network(x)
+                binary_prediction = torch.nn.functional.one_hot(prediction.argmax(1)).transpose(3,1).transpose(3,2)
+                metric(y_pred = binary_prediction, y=y)
+            metric_value = metric.aggregate().item()
+            metric.reset()
+        return metric_value
