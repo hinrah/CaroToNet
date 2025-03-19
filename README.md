@@ -19,8 +19,7 @@ To install dependencies run ```pip install -r requirements.txt```
 ### Load Challenge test set and preprocess label masks, images and distance maps.
 
 1. Get challenge test set
-   1. Download from: https://vessel-wall-segmentation.grand-challenge.org/results/
-   2. Unzip
+   1. Unfortunately the 2021 Carotid Artery Vessel Wall Segmentation Challenge is no longer available. If you want to reproduce the results contract me for the test dataset.
 2. Download and Install MeVisLab 3.7.2 from this page: https://www.mevislab.de/download 
 3. Open MeVisLab
 4. Add relavant MevisLabModules
